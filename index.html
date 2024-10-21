@@ -8,39 +8,59 @@
 </head>
 <body>
     <div class="title">
-        <p><h1>Hello Coder it is a web calculator</h1></p>
-        
+        <h1>Hello Coder, it is a web calculator</h1>
     </div>
     <div class="container">
-        <form action="">
+        <form onsubmit="event.preventDefault()">
             <div class="top_container">
-                <input type="text" class="input" placeholder="0">
+                <input type="text" class="input" id="display" placeholder="Hello Tareq" disabled>
             </div>
             <div class="bottom_container">
-                <button>ON</button>
-                <button>M+</button>
-                <button>M-</button>
-                <button>C</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>%</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>-</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>+</button>
-                <button>0</button>
-                <button>00</button>
-                <button>.</button>
-                <button>=</button>
+                <button type="button" onclick="appendvalue('ON')">ON</button>
+                <button type="button">M+</button>
+                <button type="button">M-</button>
+                <button type="button" onclick="clearDisplay()">C</button>
+
+                <button type="button" onclick="appendvalue('7')">7</button>
+                <button type="button" onclick="appendvalue('8')">8</button>
+                <button type="button" onclick="appendvalue('9')">9</button>
+                <button type="button" onclick="appendvalue('%')">%</button>
+
+                <button type="button" onclick="appendvalue('4')">4</button>
+                <button type="button" onclick="appendvalue('5')">5</button>
+                <button type="button" onclick="appendvalue('6')">6</button>
+                <button type="button" onclick="appendvalue('-')">-</button>
+
+                <button type="button" onclick="appendvalue('1')">1</button>
+                <button type="button" onclick="appendvalue('2')">2</button>
+                <button type="button" onclick="appendvalue('3')">3</button>
+                <button type="button" onclick="appendvalue('+')">+</button>
+
+                <button type="button" onclick="appendvalue('0')">0</button>
+                <button type="button" onclick="appendvalue('00')">00</button>
+                <button type="button" onclick="appendvalue('.')">.</button>
+                <button type="button" onclick="calculate()">=</button>
             </div>
         </form>
     </div>
-    <a href="https://www.youtube.com/" >click me</a>
 
+    <script>
+        function appendvalue(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = '';
+        }
+
+        function calculate() {
+            try {
+                let result = eval(document.getElementById("display").value);
+                document.getElementById("display").value = result;
+            } catch (e) {
+                document.getElementById("display").value = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
