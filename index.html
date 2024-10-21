@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="title">
-        <h1>Hello Coder, it is a web calculator</h1>
+        <h1>Hello it is a web calculator</h1>
     </div>
     <div class="container">
         <form onsubmit="event.preventDefault()">
@@ -16,15 +16,15 @@
                 <input type="text" class="input" id="display" placeholder="Hello Tareq" disabled>
             </div>
             <div class="bottom_container">
-                <button type="button" onclick="appendvalue('ON')">ON</button>
+                <button type="button" onclick="clearDisplay()">C</button>
                 <button type="button">M+</button>
                 <button type="button">M-</button>
-                <button type="button" onclick="clearDisplay()">C</button>
+                <button type="button" onclick="appendvalue('/')">/</button>
 
                 <button type="button" onclick="appendvalue('7')">7</button>
                 <button type="button" onclick="appendvalue('8')">8</button>
                 <button type="button" onclick="appendvalue('9')">9</button>
-                <button type="button" onclick="appendvalue('%')">%</button>
+                <button type="button" onclick="appendvalue('*')">*</button>
 
                 <button type="button" onclick="appendvalue('4')">4</button>
                 <button type="button" onclick="appendvalue('5')">5</button>
@@ -43,7 +43,10 @@
             </div>
         </form>
     </div>
-
+    <label>For more Upadte</label>
+    <a href="https://www.youtube.com/@tareq_miah_official">click here</a>
+    <br><br>
+    <marquee class="greeting">Thanks to you,    for using web calculator</marquee>
     <script>
         function appendvalue(value) {
             document.getElementById("display").value += value;
